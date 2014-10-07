@@ -1,0 +1,2 @@
+[B]v0.1[/B]
+- Beta release: Currently scrapes artist, title, and release year.
