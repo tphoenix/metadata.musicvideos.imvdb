@@ -1,3 +1,6 @@
+[B]v0.3[/B]
+- Added ability to scrape thumbnail.
+
 [B]v0.2[/B]
 - Added ability to scrape director/s.
 

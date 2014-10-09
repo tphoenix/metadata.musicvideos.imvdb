@@ -33,6 +33,18 @@
             <RegExp dest="5+" output="&lt;director&gt;\1&lt;/director&gt;" input="$$1">
                 <expression repeat="yes" noclean="1">&quot;entity_name&quot;: &quot;([^&quot;]*)&quot;,</expression>
             </RegExp>
+            <RegExp dest="5+" output="&lt;thumb&gt;http://images.imvdb.com/video/\1_music_video_ov.jpg&lt;/thumb&gt;" input="$$6">
+                <RegExp dest="6" output="\1" input="$$1">
+                    <expression noclean="1">&quot;id&quot;: ([^,]*),</expression>
+                </RegExp>
+                <RegExp dest="6+" output="-\1" input="$$1">
+                    <expression noclean="1">&quot;slug&quot;: &quot;([^&quot;]*)&quot;,</expression>
+                </RegExp>
+                <RegExp dest="6+" output="-\1" input="$$1">
+                    <expression noclean="1">&quot;song_slug&quot;: &quot;([^&quot;]*)&quot;,</expression>
+                </RegExp>
+                <expression noclean="1"></expression>
+            </RegExp>
             <expression noclean="1"></expression>
         </RegExp>
     </GetDetails>
