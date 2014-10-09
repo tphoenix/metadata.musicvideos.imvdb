@@ -30,6 +30,9 @@
             <RegExp dest="5+" output="&lt;year&gt;\1&lt;/year&gt;" input="$$1">
                 <expression noclean="1">&quot;year&quot;: ([^,]*),</expression>
             </RegExp>
+            <RegExp dest="5+" output="&lt;director&gt;\1&lt;/director&gt;" input="$$1">
+                <expression repeat="yes" noclean="1">&quot;entity_name&quot;: &quot;([^&quot;]*)&quot;,</expression>
+            </RegExp>
             <expression noclean="1"></expression>
         </RegExp>
     </GetDetails>

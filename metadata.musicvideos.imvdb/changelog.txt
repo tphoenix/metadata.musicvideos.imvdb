@@ -1,2 +1,5 @@
+[B]v0.2[/B]
+- Added ability to scrape director/s.
+
 [B]v0.1[/B]
 - Beta release: Currently scrapes artist, title, and release year.
