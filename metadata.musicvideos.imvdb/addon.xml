@@ -13,9 +13,9 @@
     <summary lang="en">IMVDb Music Video Scraper</summary>
     <description lang="en">This scraper downloads music video information from imvdb.com. Currently it retrieves Artist, Title, Year and Director information, as well as a thumbnail.</description>
     <website></website>
-    <source></source>
+    <source>http://github.com/tphoenix/imvdb-scraper</source>
     <email></email>
-    <forum></forum>
-    <license></license>
+    <forum>http://forum.xbmc.org/showthread.php?tid=205755</forum>
+    <license>GNU GPLv2</license>
   </extension>
 </addon>
