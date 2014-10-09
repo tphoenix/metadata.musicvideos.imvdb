@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<scraper language="en" thumb="icon.png" date="2014-10-04" content="musicvideos" framework="1.1" name="The Internet Music Video Database">
+<scraper language="en" thumb="icon.png" date="2014-10-09" content="musicvideos" framework="1.1" name="The Internet Music Video Database">
     <CreateSearchUrl dest="3">
         <RegExp dest="3" output="&lt;url&gt;http://imvdb.com/api/v1/search/videos?q=\1&lt;/url&gt;" input="$$4">
             <RegExp dest="4" output="\1" input="$$1">
