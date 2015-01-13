@@ -1,3 +1,9 @@
+[B]v0.5[/B]
+- Changed source of info back to the API (found a way to get more information out of it).
+- Removed support for Genres and Tags (these are not available in the API).
+- Added Album data (which is just the song title again).
+- Known issues: Possible issue when scraping thumbs that have an accented character in the URL.
+
 [B]v0.4[/B]
 - Changed source of info to the main site, as there is limited information on the API.
 - Added support for Studio (scraped from Production Company).
