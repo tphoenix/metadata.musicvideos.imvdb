@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<scraper language="en" thumb="icon.png" date="2015-01-16" content="musicvideos" framework="1.1" name="The Internet Music Video Database">
+    <CreateSearchUrl dest="3">
+        <RegExp dest="3" output="&lt;url&gt;http://imvdb.com/api/v1/search/videos?q=\1&lt;/url&gt;" input="$$4">
+            <RegExp dest="4" output="\1" input="$$1">
+                <expression clear="yes" noclean="1">^([^-!, ]*)</expression>
+            </RegExp>
+            <RegExp dest="4+" output="%20\1" input="$$1">
+                <expression repeat="yes" noclean="1">[-!, ]([^-!, ]*)</expression>
+            </RegExp>
+            <expression clear="yes" noclean="1"></expression>
+        </RegExp>
+    </CreateSearchUrl>
+    <GetSearchResults dest="3">
+        <RegExp dest="3" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" input="$$5">
+            <RegExp dest="5" output="&lt;entity&gt;&lt;title&gt;\3 - \2&lt;/title&gt;&lt;url&gt;http://imvdb.com/api/v1/video/\1?include=credits,bts,countries,sources,featured,popularity&lt;/url&gt;&lt;/entity&gt;" input="$$1">
+                <expression clear="yes" repeat="yes" fixchars="1" noclean="1">&quot;id&quot;: ([^,]*),.*?&quot;song_title&quot;: &quot;([^&quot;]*)&quot;,.*?&quot;name&quot;: &quot;([^&quot;]*)&quot;,</expression>
+            </RegExp>
+            <expression noclean="1"></expression>
+        </RegExp>
+    </GetSearchResults>
+    <GetDetails dest="3">
+        <RegExp dest="3" output="&lt;details&gt;\1&lt;/details&gt;" input="$$5">
+            <RegExp dest="5" output="&lt;title&gt;\1&lt;/title&gt;" input="$$1">
+                <expression fixchars="1" noclean="1">&quot;song_title&quot;: &quot;([^&quot;]*)&quot;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;artist&gt;\1&lt;/artist&gt;" input="$$1">
+                <expression fixchars="1" noclean="1">&quot;artists&quot;:.*?&quot;name&quot;: &quot;([^&quot;]*)&quot;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;album&gt;\1&lt;/album&gt;" input="$$1">
+                <expression fixchars="1" noclean="1">&quot;artists&quot;:.*?&quot;name&quot;: &quot;([^&quot;]*)&quot;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;year&gt;\1&lt;/year&gt;" input="$$1">
+                <expression fixchars="1" noclean="1">&quot;year&quot;: ([^,]*),</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;director&gt;\1&lt;/director&gt;" input="$$6">
+                <RegExp dest="6" output="\1" input="$$1">
+                    <expression fixchars="1" noclean="1">&quot;crew&quot;:([^]]*)]</expression>
+                </RegExp>
+                <expression repeat="yes" fixchars="1" noclean="1">&quot;position_name&quot;: &quot;Director&quot;.*?&quot;entity_name&quot;: &quot;([^&quot;]*)&quot;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;studio&gt;\1&lt;/studio&gt;" input="$$6">
+                <expression repeat="yes" fixchars="1" noclean="1">&quot;position_name&quot;: &quot;Production Company&quot;.*?&quot;entity_name&quot;: &quot;([^"]*)&quot;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;thumb&gt;http://images.imvdb.com/video/\1-\3-\2_music_video_ov.jpg&lt;/thumb&gt;" input="$$1">
+                <expression fixchars="1" noclean="1">&quot;id&quot;: ([^,]*),.*?&quot;song_slug&quot;: &quot;([^&quot;]*)&quot;.*?&quot;slug&quot;: &quot;([^&quot;]*)&quot;</expression>
+            </RegExp>
+            <expression fixchars="1" noclean="1"></expression>
+        </RegExp>
+    </GetDetails>
+</scraper>

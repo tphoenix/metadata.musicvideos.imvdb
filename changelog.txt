@@ -1,0 +1,22 @@
+[B]v0.6 (2015-01-16)[/B]
+- Changed album name to be scraped from artist name instead of track title. This allows for all music videos by an artist to be viewed at once.
+
+[B]v0.5 (2015-01-13)[/B]
+- Changed source of info back to the API (found a way to get more information out of it).
+- Removed support for Genres and Tags (these are not available in the API).
+- Added Album data (which is just the song title again).
+- Known issues: Possible issue when scraping thumbs that have an accented character in the URL.
+
+[B]v0.4 (2015-01-11)[/B]
+- Changed source of info to the main site, as there is limited information on the API.
+- Added support for Studio (scraped from Production Company).
+- Also added Genre and Tag support. 
+
+[B]v0.3 (2014-10-09)[/B]
+- Added ability to scrape thumbnail.
+
+[B]v0.2 (2014-10-09)[/B]
+- Added ability to scrape director/s.
+
+[B]v0.1 (2014-10-04)[/B]
+- Beta release: Currently scrapes artist, title, and release year.

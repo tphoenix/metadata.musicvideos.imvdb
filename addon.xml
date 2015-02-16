@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.musicvideos.imvdb"
+       name="The Internet Music Video Database"
+       version="0.6"
+       provider-name="tphoenix">
+  <requires>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.musicvideos"
+             language="en"
+             library="imvdb.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">IMVDb Music Video Scraper</summary>
+    <description lang="en">This scraper downloads music video information from IMVDb.com.</description>
+    <website></website>
+    <source>http://github.com/tphoenix/metadata.musicvideos.imvdb</source>
+    <email></email>
+    <forum>http://forum.kodi.tv/showthread.php?tid=205755</forum>
+    <license>GNU GPLv2</license>
+  </extension>
+</addon>
